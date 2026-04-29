@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -36,8 +37,12 @@ class Post extends Model
         return $query->where('status', self::STATUS_DRAFT);
     }
 
-    public function scopeSearch($query, $term)
+    public function scopeSearch($query, ?string $term)
     {
+        if (empty($term)) {
+            return $query;
+        }
+
         return $query->where(function ($q) use ($term) {
             $q->where('title', 'like', "%{$term}%")
                 ->orWhere('content', 'like', "%{$term}%")
@@ -45,4 +50,25 @@ class Post extends Model
         });
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($post) {
+            $post->slug = static::generateUniqueSlug($post->title);
+        });
+    }
+
+    private static function generateUniqueSlug(string $title): string
+    {
+        $slug = Str::slug($title);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        while (static::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter++;
+        }
+
+        return $slug;
+    }
 }

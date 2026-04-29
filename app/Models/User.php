@@ -41,11 +41,6 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function hasPosts(): bool
-    {
-        return $this->posts()->exists();
-    }
-
     public function postsCount()
     {
         return $this->posts()->count();
