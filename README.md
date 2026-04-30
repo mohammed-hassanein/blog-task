@@ -15,6 +15,12 @@ This project implements the required task features:
 - Clean MVC structure
 - Blade templates with a simple, clean Tailwind UI
 
+## Scope And Assumptions
+
+- This submission focuses on the requested task scope only.
+- Authentication and role-based authorization are not included by default.
+- Admin routes are available directly for review/testing purposes.
+
 ## Post Fields
 
 - Title
@@ -22,6 +28,16 @@ This project implements the required task features:
 - Content
 - Status (`draft` / `published`)
 - Published Date (`published_at`)
+
+### Why `string` Instead of `enum` for Status?
+
+The `status` column is intentionally defined as `string` in migration:
+
+```php
+$table->string('status', 20)->default('draft');
+```
+
+This choice keeps the schema flexible and easier to evolve (for example: adding `archived` later) without modifying existing enum definitions.
 
 ## Implemented Features
 
@@ -124,6 +140,16 @@ Set your DB credentials, then run:
 php artisan migrate
 ```
 
+### Required `.env` variables
+
+- `APP_URL`
+- `DB_CONNECTION`
+- `DB_HOST`
+- `DB_PORT`
+- `DB_DATABASE`
+- `DB_USERNAME`
+- `DB_PASSWORD`
+
 ### 4. Run the project
 
 Option A (Laragon, recommended):
@@ -137,6 +163,68 @@ php artisan serve
 ```
 
 Then open the shown URL (usually `http://127.0.0.1:8000`).
+
+## User Flows
+
+### Public flow
+
+- Open home page
+- Search and browse published posts
+- Open a single post by slug
+
+### Admin flow
+
+- Open admin posts list
+- Create or edit post content
+- Publish / unpublish post
+- Delete post if needed
+
+## Test Strategy
+
+- Tests run with Pest.
+- Feature test uses database refresh so migrations run for test context.
+- Main command:
+
+```bash
+php artisan test
+```
+
+## Troubleshooting
+
+### `localhost:8000` is not reachable
+
+- If using Laragon, prefer opening `http://blog-task.test`.
+- If `php artisan serve` fails due to busy ports, use Laragon domain instead.
+
+### `vite is not recognized`
+
+- Run:
+
+```bash
+npm install
+```
+
+Then:
+
+```bash
+npm run dev
+```
+
+### Test fails with missing `posts` table
+
+- Ensure tests are executed with:
+
+```bash
+php artisan test
+```
+
+- The test setup refreshes database state for feature tests.
+
+## Known Limitations
+
+- No authentication/authorization layer yet.
+- No categories/tags.
+- No image upload workflow.
 
 ## Test Command
 
