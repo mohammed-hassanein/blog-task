@@ -1,169 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 # Blog Task (Laravel)
 
-A complete blog application built with Laravel 13, featuring a full admin panel for managing posts and a public-facing blog for viewing published content.
+Simple blog management system built with Laravel 13.
 
-## ✨ Features Implemented
+## Overview
 
-### 📄 Post Model & Database
+This project implements the required task features:
 
-- **Post Model** with fillable attributes, casts, and a relationship to `User`
-- **Auto-generated Slugs**: Slugs are automatically generated from the title using Laravel's `Str::slug()` with unique constraint handling
-- **Status Management**: Draft and published statuses with `published_at` timestamp
-- **Database Migration**: Complete posts table with indexes and proper structure
+- Public page that shows published posts only
+- Admin pages to manage all posts
+- Create, edit, delete posts
+- Publish / unpublish posts
+- Auto slug generation from title
+- Form validation
+- Clean MVC structure
+- Blade templates with a simple, clean Tailwind UI
 
-### 🔍 Query Scopes
+## Post Fields
 
-The `Post` model includes powerful query scopes for filtering and searching:
+- Title
+- Slug (auto-generated)
+- Content
+- Status (`draft` / `published`)
+- Published Date (`published_at`)
 
-- `scopePublished($query)` — Returns published posts with a valid `published_at` timestamp
-- `scopeDraft($query)` — Returns draft posts
-- `scopeSearch($query, $term)` — Full-text search across title, content, and slug
+## Implemented Features
 
-Example usage:
+### Public Blog
 
-```php
-Post::published()->latest('published_at')->get();
-Post::draft()->get();
-Post::search($searchTerm)->paginate();
-```
+- List published posts with search and pagination
+- View single post by slug
+- Draft posts are blocked from public view (404)
 
-### 🛠️ Admin Panel (PostController)
+### Admin Panel
 
-Complete CRUD operations for managing posts:
+- List all posts with search and pagination
+- Add new post
+- Edit existing post
+- Delete post
+- Toggle publish status
 
-- **Index**: List all posts with search and pagination (10 per page)
-- **Create**: Display form to create new post
-- **Store**: Validate and save new post with unique slug generation
-- **Show**: Display single post details
-- **Edit**: Load post for editing
-- **Update**: Validate and update post data
-- **Destroy**: Delete post
-- **Toggle Status**: Switch between draft/published with automatic `published_at` handling
+## Validation
 
-Features:
+Validation is implemented in `PostRequest`:
 
-- Search functionality across posts
-- Form validation using `PostRequest`
-- Flash messages for user feedback
-- Pagination with query string preservation
+- `title`: required, string, max 255
+- `content`: required, string, min 10
+- `status`: required, one of `draft` or `published`
 
-### 📰 Public Blog (BlogController)
+## Slug Generation
 
-Frontend display of published posts:
+Slug is generated automatically from the title in `Post` model (`creating` event) with unique handling (adds `-1`, `-2`, etc. when needed).
 
-- **Index**: Display published posts with search and pagination
-- **Show**: Display single post (404 if not published)
-- Features full-text search, latest posts first, and proper access control
+## Routes
 
-### 🛣️ Routes Structure
+### Public
 
-**Public Blog Routes:**
+- `GET /` -> blog index
+- `GET /posts/{post:slug}` -> blog show
 
-```
-GET  /                    - Blog homepage (list published posts)
-GET  /posts/{post:slug}   - View single post by slug
-```
+### Admin (`/admin`, name prefix `admin.`)
 
-**Admin Panel Routes (prefix: `/admin`, name: `admin.`):**
+- `GET /posts` -> list
+- `GET /posts/create` -> create form
+- `POST /posts` -> store
+- `GET /posts/{post}` -> show
+- `GET /posts/{post}/edit` -> edit form
+- `PUT /posts/{post}` -> update
+- `DELETE /posts/{post}` -> delete
+- `PATCH /posts/{post}/toggle-status` -> publish/unpublish
 
-```
-GET    /posts                      - List all posts
-GET    /posts/create              - Show create form
-POST   /posts                      - Store new post
-GET    /posts/{post}              - Show post details
-GET    /posts/{post}/edit         - Show edit form
-PUT    /posts/{post}              - Update post
-DELETE /posts/{post}              - Delete post
-PATCH  /posts/{post}/toggle-status - Toggle draft/published status
-```
+## UI Notes
 
-### 📋 Form Validation (PostRequest)
+- Shared Blade layout for all pages
+- Tailwind CSS via CDN
+- Responsive layout
+- Flash messages (success/error)
+- Consistent card/table/form styling
 
-Dedicated form request class for post validation. Currently configured with authorization rules (can be extended with specific rules).
+## Tech Stack
 
-### 📁 Project Structure
+- PHP 8.3+
+- Laravel 13
+- Blade
+- MySQL/MariaDB
+- Tailwind CSS (CDN)
+- Pest (testing)
 
-```
-app/
-  Http/
-    Controllers/
-      PostController.php    - Admin CRUD operations
-      BlogController.php    - Public blog display
-    Requests/
-      PostRequest.php       - Form validation
-  Models/
-    Post.php                - Post model with scopes and relationships
-database/
-  migrations/
-    2026_04_29_221400_create_posts_table.php  - Posts table definition
-routes/
-  web.php                   - All route definitions
-resources/
-  views/
-    admin/posts/          - Admin panel views
-    blog/                 - Public blog views
-```
+## Setup Instructions
 
-## 🔧 Technology Stack
-
-- **Framework**: Laravel 13
-- **Database**: MySQL/Mariadb (via Laragon)
-- **Frontend**: Tailwind CSS 4, Vite
-- **Testing**: Pest
-- **PHP Version**: 8.3+
-
-## 🚀 Getting Started
+### 1. Install dependencies
 
 ```bash
-# Install dependencies
 composer install
-npm install
-
-# Set up environment
-cp .env.example .env
-php artisan key:generate
-
-# Run migrations
-php artisan migrate
-
-# Start development server
-php artisan serve
-
-# In another terminal, run Vite
-npm run dev
 ```
 
-## 🧪 Running Tests
+### 2. Create environment file
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Then generate app key:
+
+```bash
+php artisan key:generate
+```
+
+### 3. Configure database in `.env`
+
+Set your DB credentials, then run:
+
+```bash
+php artisan migrate
+```
+
+### 4. Run the project
+
+Option A (Laragon, recommended):
+
+- Open via: `http://blog-task.test`
+
+Option B (artisan server):
+
+```bash
+php artisan serve
+```
+
+Then open the shown URL (usually `http://127.0.0.1:8000`).
+
+## Test Command
 
 ```bash
 php artisan test
-# or with Pest
-./vendor/bin/pest
 ```
 
-## 📝 Status Field Design
+## Delivery Checklist
 
-The migration uses a string column for status instead of an enum for flexibility:
-
-```php
-$table->string('status', 20)->default('draft');  // 'draft', 'published'
-```
-
-Benefits:
-
-- Easier to add new statuses later without modifying old migrations
-- No need to alter enum types across different database systems
-- Status constants defined in the model for consistency
-
-## 📖 Next Steps (Optional)
-
-- Implement authorization checks in PostController (restrict admin access)
-- Add categories/tags for posts
-- Add comments functionality
-- Create seeders for sample data
-- Build complete blade templates for admin and public views
-- Add image upload support
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Project uploaded to GitHub
+- README with setup instructions
