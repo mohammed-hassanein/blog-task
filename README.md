@@ -18,8 +18,9 @@ This project implements the required task features:
 ## Scope And Assumptions
 
 - This submission focuses on the requested task scope only.
-- Authentication and role-based authorization are not included by default.
-- Admin routes are available directly for review/testing purposes.
+- Authentication is included as an optional enhancement.
+- Admin routes are protected with `auth` middleware.
+- Role-based authorization (admin/user roles) is not implemented yet.
 
 ## Post Fields
 
@@ -84,6 +85,12 @@ Slug is generated automatically from the title in `Post` model (`creating` event
 - `PUT /posts/{post}` -> update
 - `DELETE /posts/{post}` -> delete
 - `PATCH /posts/{post}/toggle-status` -> publish/unpublish
+
+### Auth
+
+- `GET /login` -> login form
+- `POST /login` -> sign in
+- `POST /logout` -> sign out
 
 ## UI Notes
 
@@ -164,6 +171,15 @@ php artisan serve
 
 Then open the shown URL (usually `http://127.0.0.1:8000`).
 
+### 5. Admin Login Credentials
+
+Use the following fixed admin account:
+
+- Email: `admin@gmail.com`
+- Password: `password`
+
+Then sign in from `/login`.
+
 ## User Flows
 
 ### Public flow
@@ -222,7 +238,7 @@ php artisan test
 
 ## Known Limitations
 
-- No authentication/authorization layer yet.
+- No role-based authorization layer yet (only authentication).
 - No categories/tags.
 - No image upload workflow.
 

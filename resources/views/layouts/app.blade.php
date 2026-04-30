@@ -45,9 +45,21 @@
                     <a href="{{ route('blog.index') }}" class="px-4 py-2 text-slate-600 hover:text-indigo-600 font-medium transition-all duration-300">
                         Home
                     </a>
-                    <a href="{{ route('admin.posts.index') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-indigo-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
-                        Dashboard
-                    </a>
+                    @auth
+                        <a href="{{ route('admin.posts.index') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-indigo-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
+                            Dashboard
+                        </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="px-4 py-2 text-slate-600 hover:text-rose-600 font-medium transition-all duration-300">
+                                Logout
+                            </button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-indigo-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
+                            Login
+                        </a>
+                    @endauth
                 </div>
             </div>
         </div>
