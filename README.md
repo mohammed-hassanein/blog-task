@@ -76,6 +76,14 @@ Slug is generated automatically from the title in `Post` model (`creating` event
 - Responsive layout
 - Flash messages (success/error)
 - Consistent card/table/form styling
+- Modern SaaS-style visual language (clean spacing, soft slate palette, blue primary accents)
+
+### Key Screens
+
+- Public Blog Index: search + published posts + pagination
+- Public Blog Show: readable article layout
+- Admin Posts Index: table dashboard with status badges and actions
+- Admin Create/Edit: centered form cards with validation states
 
 ## Tech Stack
 
