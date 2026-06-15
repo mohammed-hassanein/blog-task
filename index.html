@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وثائق منصة إدارة السياحة SaaS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="topbar" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top">Tourism SaaS Docs</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <div class="nav-links" id="mainNav">
+        <a href="#overview">نظرة عامة</a>
+        <a href="#architecture">المعمارية</a>
+        <a href="#modules">الوحدات</a>
+        <a href="#workflows">سير العمل</a>
+        <a href="#roadmap">خطة التنفيذ</a>
+        <button class="print-btn" type="button">طباعة</button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">وثيقة مشروع معاد تنظيمها للقراءة والتنفيذ</p>
+      <h1>منصة SaaS لإدارة شركات السياحة والسفر</h1>
+      <p class="lead">نظام مركزي متعدد الشركات لإدارة البرامج السياحية، العملاء، الحجوزات، الفواتير، المدفوعات، المصروفات، التقارير، والبوابة العامة للحجز، مع دعم عربي/إنجليزي كامل ومعمارية قابلة للتوسع.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#toc">استعراض الفهرس</a>
+        <a class="btn ghost" href="#implementation-plan">خطة التنفيذ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="toc" id="toc" aria-label="فهرس المحتوى">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#analysis">نتائج التحليل</a></li>
+        <li><a href="#site-structure">هيكل الموقع المقترح</a></li>
+        <li><a href="#overview">فكرة المشروع والأهداف</a></li>
+        <li><a href="#users">أنواع المستخدمين</a></li>
+        <li><a href="#architecture">بنية النظام</a></li>
+        <li><a href="#modules">الوحدات الرئيسية</a></li>
+        <li><a href="#portal">البوابة العامة</a></li>
+        <li><a href="#programs">البرامج السياحية</a></li>
+        <li><a href="#resources">مكتبة الموارد</a></li>
+        <li><a href="#workflows">سير العمل</a></li>
+        <li><a href="#saas-layer">إدارة المنصة</a></li>
+        <li><a href="#roadmap">خارطة الطريق</a></li>
+        <li><a href="#future">التكاملات المستقبلية</a></li>
+      </ol>
+    </aside>
+
+    <article class="content">
+      <section class="section" id="analysis">
+        <span class="section-label">قبل التنفيذ</span>
+        <h2>ملخص التحليل الكامل للمستند</h2>
+        <div class="grid cards">
+          <div class="card"><h3>فكرة المشروع</h3><p>منصة SaaS لإدارة شركات السياحة والسفر من خلال واجهة موحدة، مع عزل كامل لبيانات كل شركة عبر النطاق الفرعي وإتاحة بوابة حجز عامة لكل شركة.</p></div>
+          <div class="card"><h3>نموذج العمل</h3><p>اشتراكات دورية شهرية أو سنوية، وحدات اختيارية Add-on، وخطة Enterprise تشمل التخصيص والدعم المتقدم.</p></div>
+          <div class="card"><h3>الجمهور المستهدف</h3><p>وكالات السفر، منظمو الرحلات، شركات السياحة، ومزودو خدمات السفر، مع تركيز أولي على السوق السعودي ثم الخليج والعالم العربي.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="site-structure">
+        <h2>الهيكل المقترح للموقع</h2>
+        <div class="split">
+          <div>
+            <h3>الأقسام الرئيسية</h3>
+            <ul class="check-list">
+              <li>الملخص التنفيذي وفكرة المنصة.</li>
+              <li>نموذج العمل وخطط الاشتراك.</li>
+              <li>الأدوار والصلاحيات.</li>
+              <li>المعمارية التقنية وحزمة التقنيات.</li>
+              <li>الوحدات الأساسية والبوابة العامة.</li>
+              <li>تفاصيل البرامج السياحية ومكتبة الموارد.</li>
+              <li>سير الحجوزات ودورة حياة الحالة.</li>
+              <li>إدارة المنصة، خارطة الطريق، والتكاملات.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>مكونات قابلة لإعادة الاستخدام</h3>
+            <ul class="check-list">
+              <li>بطاقات ملخص للأهداف والميزات.</li>
+              <li>جداول مقارنة للخطط والأدوار والتقنيات.</li>
+              <li>قوائم مراحل workflow مرقمة.</li>
+              <li>بطاقات Modules قابلة للتكرار.</li>
+              <li>مكوّن تنبيه للملاحظات المعمارية المهمة.</li>
+              <li>فهرس جانبي ثابت وأزرار طباعة وعودة للأعلى.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <h2>فكرة المشروع والأهداف</h2>
+        <p>تهدف المنصة إلى رقمنة العمليات اليومية لشركات السياحة والسفر، وتقليل الاعتماد على ملفات Excel والجداول اليدوية، وتوحيد بيانات العملاء والحجوزات والبرامج السياحية والعمليات المالية ضمن نظام واحد.</p>
+        <h3>الأهداف الاستراتيجية</h3>
+        <ul class="check-list">
+          <li>إدارة البرامج السياحية والحجوزات والعملاء من منصة مركزية واحدة.</li>
+          <li>ربط الفواتير والمدفوعات والمصروفات بملفات العملاء والحجوزات.</li>
+          <li>توفير تقارير تشغيلية ومالية دقيقة في الوقت الفعلي.</li>
+          <li>بناء نظام مرن قابل للتوسع تقنياً، قالبياً، ولغوياً.</li>
+          <li>دعم العربية والإنجليزية واتجاهي RTL/LTR على مستوى النظام.</li>
+        </ul>
+        <h3>خطط الاشتراك</h3>
+        <div class="table-wrap"><table><thead><tr><th>الخطة</th><th>الفئة</th><th>المحتوى</th></tr></thead><tbody><tr><td>Core Plan</td><td>الشركات الصغيرة والمتوسطة</td><td>العملاء، البرامج، الحجوزات، البوابة العامة، الأساسيات المالية، القالب الافتراضي، ودعم اللغتين.</td></tr><tr><td>Add-on Modules</td><td>حسب الحاجة</td><td>وحدات اختيارية بأسعار مستقلة، ومن ضمنها لاحقاً قوالب إضافية من Theme Gallery.</td></tr><tr><td>Enterprise Plan</td><td>الشركات الكبيرة</td><td>جميع الوحدات، دعم متقدم، وتخصيصات كاملة.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="section" id="users">
+        <h2>أنواع المستخدمين والصلاحيات</h2>
+        <div class="table-wrap"><table><thead><tr><th>المستوى</th><th>الدور</th><th>المسؤوليات</th></tr></thead><tbody><tr><td>المنصة</td><td>Super Admin</td><td>إدارة الشركات، الاشتراكات، الوحدات والقوالب، الأدوار والصلاحيات، ومراقبة أداء وأمن النظام.</td></tr><tr><td>الشركة</td><td>Company Admin</td><td>إعدادات الشركة، اللغة الافتراضية، الهوية البصرية، الموظفون، الصلاحيات، ومتابعة الوحدات.</td></tr><tr><td>الشركة</td><td>Sales Staff</td><td>إدارة العملاء، بناء عروض الحجوزات، وتصميم أو عرض البرامج السياحية.</td></tr><tr><td>الشركة</td><td>Operations Staff</td><td>تنفيذ الرحلات، التنسيق مع الموردين، وإدارة خط السير اليومي.</td></tr><tr><td>الشركة</td><td>Accountant</td><td>إصدار الفواتير، تسجيل المدفوعات، تتبع المصروفات، ومراجعة التقارير المالية.</td></tr><tr><td>الشركة</td><td>Customer Service</td><td>استقبال الاستفسارات، متابعة الطلبات، حل الشكاوى، وتوثيق تقييمات ما بعد الرحلة.</td></tr></tbody></table></div>
+        <p class="note">لكل مستخدم إعداد لغة مستقل عبر <code>preferred_locale</code>، ولا يرتبط اختيار لغة الموظف بإعدادات زملائه أو إعدادات الشركة.</p>
+      </section>
+
+      <section class="section" id="architecture">
+        <h2>بنية النظام والتقنيات المستخدمة</h2>
+        <div class="table-wrap"><table><thead><tr><th>الطبقة</th><th>التقنية</th><th>الغرض</th></tr></thead><tbody><tr><td>Backend</td><td>Laravel 13 / PHP 8.4</td><td>منطق العمل ومعالجة البيانات ضمن Laravel MVC.</td></tr><tr><td>Frontend</td><td>Laravel Blade + Bootstrap 5</td><td>واجهات Server-Side Rendering متجاوبة دون اعتماد SPA.</td></tr><tr><td>Database</td><td>MySQL 8</td><td>تخزين البيانات المهيكلة والعلاقات.</td></tr><tr><td>Cache</td><td>Redis</td><td>الجلسات والتخزين المؤقت وتحسين الأداء.</td></tr><tr><td>Queue</td><td>Laravel Horizon</td><td>إدارة الوظائف الخلفية والمهام المجدولة.</td></tr><tr><td>Storage</td><td>AWS S3 / Cloudflare R2</td><td>تخزين الملفات والفواتير والصور والمستندات.</td></tr><tr><td>Auth</td><td>Laravel Session Auth + RBAC</td><td>مصادقة قائمة على الجلسات وتحكم بالصلاحيات عبر Middleware.</td></tr><tr><td>Search</td><td>Laravel Scout</td><td>بحث سريع في بيانات النظام.</td></tr></tbody></table></div>
+        <h3>القرارات المعمارية الأساسية</h3>
+        <div class="grid cards">
+          <div class="card"><h3>Multi-Company</h3><p>قاعدة بيانات مشتركة مع عزل منطقي صارم عبر <code>company_id</code> وGlobal Query Scope، وتحديد الشركة من النطاق الفرعي.</p></div>
+          <div class="card"><h3>Module Architecture</h3><p>كل وحدة مستقلة قابلة للتفعيل أو التعطيل لكل شركة عبر سجل وحدات مركزي.</p></div>
+          <div class="card"><h3>Theming</h3><p>فصل منطق العمل عن طبقة العرض، واستخدام <code>themes/default/portal</code> و<code>active_theme</code> لكل شركة.</p></div>
+          <div class="card"><h3>i18n & RTL/LTR</h3><p>ملفات لغة عربية وإنجليزية، بادئة لغة للبوابة العامة، ودعم Bootstrap RTL وCSS Logical Properties.</p></div>
+          <div class="card"><h3>تقويم مزدوج</h3><p>تخزين ميلادي فقط، مع عرض هجري/ميلادي في جميع تواريخ النظام عند الحاجة.</p></div>
+          <div class="card"><h3>حزم معتمدة</h3><p>Spatie Permission مع Teams، Spatie Activity Log، Spatie Media Library، وLaravel Breeze بعد إعادة بناء واجهاته بـBootstrap.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="modules">
+        <h2>الوحدات الرئيسية</h2>
+        <div class="module-grid">
+          <div class="module"><h3>CRM العملاء</h3><p>إدارة بيانات العملاء، تفضيلات اللغة، معلومات الاتصال، وملاحظات المسافرين.</p></div>
+          <div class="module"><h3>الإدارة المالية</h3><p>فواتير، عروض أسعار، مدفوعات، مصروفات، وربط مالي مباشر بالحجوزات والملفات.</p></div>
+          <div class="module"><h3>إدارة الحجوزات</h3><p>دورة حياة الحجز من الطلب الأولي حتى الإغلاق والتقييم.</p></div>
+          <div class="module"><h3>المستخدمون والصلاحيات</h3><p>RBAC مفصل لكل وحدة مع عزل صلاحيات الشركات عبر Teams.</p></div>
+          <div class="module"><h3>التقارير</h3><p>تقارير الحجوزات والعملاء والإيرادات والأرباح وأداء البرامج والموظفين.</p></div>
+          <div class="module"><h3>السجل التدقيقي</h3><p>توثيق العمليات الحساسة مع company_id وعرض مترجم حسب لغة المستخدم.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="portal">
+        <h2>البوابة العامة للحجوزات</h2>
+        <p>لكل شركة بوابة عامة عبر نطاق فرعي خاص تتيح للعملاء تصفح البرامج السياحية وتقديم طلبات الحجز عبر الإنترنت. البوابة جزء أساسي من النواة وليست ميزة مستقبلية.</p>
+        <ul class="check-list">
+          <li>تعرض المحتوى حسب اللغة المختارة عبر المسارات <code>/ar/</code> و<code>/en/</code>.</li>
+          <li>تستخدم القالب النشط للشركة وتحقن الهوية البصرية كمتغيرات تصميم.</li>
+          <li>تدعم تقديم طلبات الحجز والدفع الإلكتروني ضمن القالب الافتراضي في مرحلة البوابة.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="programs">
+        <h2>البرامج السياحية</h2>
+        <p>البرنامج السياحي مصمم كبرنامج خاص يطلبه العميل لعائلته أو مجموعته المستقلة، وليس حجزاً جماعياً مفتوحاً. الحقول القابلة للترجمة تحفظ بصيغة JSON للغتين.</p>
+        <div class="table-wrap"><table><thead><tr><th>المجال</th><th>أهم الحقول</th></tr></thead><tbody><tr><td>المعلومات الأساسية</td><td>اسم البرنامج، عدد الأيام والليالي، الدولة والمدينة، الوصف، التصنيف، صورة الغلاف.</td></tr><tr><td>التسعير</td><td>سعر التكلفة، السعر الأساسي، الخصم، نوع التسعير، العملة، وضريبة القيمة المضافة.</td></tr><tr><td>يشمل / لا يشمل</td><td>عناصر من مكتبة الموارد توضح ما يدخل في السعر وما يتحمله العميل.</td></tr><tr><td>خط السير اليومي</td><td>رقم اليوم، نوع البند، العنوان، الموقع الجغرافي، الملاحظات والتعليمات.</td></tr><tr><td>الإقامة والمسافرون</td><td>ربط الإقامة، عدد البالغين، عدد الأطفال، وملاحظات المسافرين.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="section" id="resources">
+        <h2>مكتبة الموارد</h2>
+        <p>مكتبة الموارد مساحة مركزية لإدارة العناصر والموردين المستخدمين في بناء البرامج، مع كيانات مستقلة لكل نوع بدلاً من جدول عام واحد.</p>
+        <div class="module-grid compact">
+          <div class="module"><h3>Hotel</h3><p>الفنادق وأماكن الإقامة، التصنيف، المدينة، أنواع الغرف، ومواعيد الدخول والخروج.</p></div>
+          <div class="module"><h3>TransportationProvider</h3><p>مزودو النقل، نوع المركبة، السعة، ومعلومات التواصل.</p></div>
+          <div class="module"><h3>Airline</h3><p>شركات الطيران، كود IATA، وملاحظات تشغيلية.</p></div>
+          <div class="module"><h3>TourGuide</h3><p>المرشدون، اللغات، الشهادات، التكلفة اليومية، ومعلومات التواصل.</p></div>
+          <div class="module"><h3>Activity</h3><p>الأنشطة، المدينة، المدة، مستوى الصعوبة، والفئة العمرية.</p></div>
+          <div class="module"><h3>Restaurant</h3><p>المطاعم، نوع المطبخ، الوجبات، والمدينة.</p></div>
+        </div>
+        <p class="note">يرتبط بند خط السير بأي مورد عبر علاقة Polymorphic باستخدام <code>resourceable_type</code> و<code>resourceable_id</code>.</p>
+      </section>
+
+      <section class="section" id="workflows">
+        <h2>سير عمل الحجوزات</h2>
+        <ol class="timeline">
+          <li><strong>استقبال الطلب:</strong> عبر البوابة العامة أو مباشرة من موظف المبيعات.</li>
+          <li><strong>تحويل البرنامج:</strong> إنشاء حجز مبدئي مع تحديد التواريخ وأعداد البالغين والأطفال.</li>
+          <li><strong>عرض السعر:</strong> إصدار عرض أو فاتورة مبدئية بناءً على التواريخ والأعداد الفعلية.</li>
+          <li><strong>تأكيد الحجز:</strong> عند استلام العربون أو السداد الكامل وتسجيل المعاملة المالية.</li>
+          <li><strong>التنفيذ:</strong> متابعة خط السير والتنسيق مع الفنادق والنقل والمرشدين والأنشطة.</li>
+          <li><strong>الإغلاق:</strong> إغلاق الحجز بعد الرحلة وتوثيق ملاحظات العميل وتقييمه.</li>
+        </ol>
+        <h3>دورة حياة حالة الحجز</h3>
+        <p class="status-flow">Inquiry → Draft Booking → Confirmed / Deposit Paid → Fully Paid → In Progress → Completed أو Cancelled</p>
+      </section>
+
+      <section class="section" id="saas-layer">
+        <h2>طبقة إدارة منصة SaaS</h2>
+        <ul class="check-list">
+          <li>إدارة الشركات وربطها بالنطاقات الفرعية وتعليق أو تفعيل الحسابات.</li>
+          <li>إدارة خطط الاشتراك Core وAdd-on وEnterprise.</li>
+          <li>سجل مركزي لتفعيل الوحدات والقوالب وتحديد <code>active_theme</code>.</li>
+          <li>فوترة اشتراكات الشركات على مستوى المنصة.</li>
+          <li>مراقبة صحة النظام، Horizon، ومعدلات الاستخدام.</li>
+          <li>الإشراف على سجلات النشاط مع الحفاظ على عزل الشركات.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="roadmap">
+        <h2>خارطة الطريق وخطة التنفيذ</h2>
+        <div class="roadmap" id="implementation-plan">
+          <div><span>1</span><h3>Foundation</h3><p>Laravel 13، العزل بالنطاقات الفرعية، Spatie packages، i18n، RTL/LTR، القوالب، التقويم المزدوج، والمصادقة.</p></div>
+          <div><span>2</span><h3>Core Modules</h3><p>CRM، البرامج وخط السير، مكتبة الموارد، الحجوزات، والفواتير والمدفوعات بلغة العميل.</p></div>
+          <div><span>3</span><h3>Public Portal</h3><p>واجهات القالب الافتراضي، تبديل اللغة، تصفح البرامج، طلبات الحجز، والدفع عبر الإنترنت.</p></div>
+          <div><span>4</span><h3>Reports & SaaS Layer</h3><p>التقارير التشغيلية والمالية والإدارية، وطبقة إدارة المنصة والوحدات والقوالب.</p></div>
+          <div><span>5</span><h3>Launch & Optimization</h3><p>اختبارات الأمن والأداء وRTL/LTR، توثيق التشغيل، تدريب الفريق، وإطلاق تجريبي محدود.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="future">
+        <h2>الرؤية المستقبلية والتكاملات</h2>
+        <div class="module-grid compact">
+          <div class="module"><h3>Theme Gallery</h3><p>وحدة Add-on لاختيار قوالب جاهزة للبوابة العامة.</p></div>
+          <div class="module"><h3>Custom Enterprise Themes</h3><p>قوالب مخصصة لعملاء Enterprise باستخدام نفس البيانات والمكونات.</p></div>
+          <div class="module"><h3>إشعارات متعددة القنوات</h3><p>SMS، البريد الإلكتروني، وWhatsApp Business API بقوالب عربية وإنجليزية.</p></div>
+          <div class="module"><h3>بوابات دفع</h3><p>تكامل مع mada وSTC Pay وبوابات دولية حسب السوق.</p></div>
+          <div class="module"><h3>Google Maps API</h3><p>ربط مواقع خط السير بخرائط تفاعلية.</p></div>
+          <div class="module"><h3>Mobile Apps & AI</h3><p>تطبيقات للعميل والمرشدين وتوصيات ذكية للبرامج والأنشطة.</p></div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <button class="back-to-top" type="button" aria-label="العودة إلى الأعلى">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
