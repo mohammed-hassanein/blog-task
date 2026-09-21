@@ -20,10 +20,10 @@
         }
     </script>
 </head>
-<body class="bg-[#f8fafc] text-slate-800 font-sans antialiased relative min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+<body class="bg-[#f8fafc] text-slate-800 font-sans antialiased relative min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
     <!-- Decorative Background Shapes -->
-    <div class="absolute top-0 inset-x-0 h-[30rem] bg-gradient-to-b from-indigo-50/80 to-transparent -z-10 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-violet-200/40 blur-3xl -z-10 pointer-events-none"></div>
+    <div class="absolute top-0 inset-x-0 h-[30rem] bg-gradient-to-b from-blue-50/80 to-transparent -z-10 pointer-events-none"></div>
+    <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-sky-200/40 blur-3xl -z-10 pointer-events-none"></div>
     <div class="absolute top-64 left-0 -ml-32 w-[30rem] h-[30rem] rounded-full bg-blue-200/30 blur-3xl -z-10 pointer-events-none"></div>
 
     <!-- Navigation -->
@@ -32,7 +32,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-200">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-200">
                         B
                     </div>
                     <a href="{{ route('blog.index') }}" class="text-2xl font-extrabold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent tracking-tight">
@@ -42,11 +42,11 @@
 
                 <!-- Navigation Links -->
                 <div class="flex items-center gap-2 sm:gap-6">
-                    <a href="{{ route('blog.index') }}" class="px-4 py-2 text-slate-600 hover:text-indigo-600 font-medium transition-all duration-300">
+                    <a href="{{ route('blog.index') }}" class="px-4 py-2 text-slate-600 hover:text-blue-600 font-medium transition-all duration-300">
                         Home
                     </a>
                     @auth
-                        <a href="{{ route('admin.posts.index') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-indigo-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
+                        <a href="{{ route('admin.posts.index') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-blue-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
                             Dashboard
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
@@ -56,7 +56,7 @@
                             </button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-indigo-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
+                        <a href="{{ route('login') }}" class="px-5 py-2.5 bg-slate-900 hover:bg-blue-600 text-white font-medium transition-all duration-300 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5">
                             Login
                         </a>
                     @endauth
@@ -95,7 +95,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
                 <div class="flex items-center gap-2">
-                    <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold text-xs shadow-md">B</div>
+                    <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold text-xs shadow-md">B</div>
                     <span class="font-bold text-slate-800 text-lg">BlogTask</span>
                 </div>
                 <p class="text-sm font-medium">&copy; {{ date('Y') }} All rights reserved.</p>
