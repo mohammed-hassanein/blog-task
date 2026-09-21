@@ -15,7 +15,7 @@
         @csrf
         @method('PUT')
         <!-- Abstract Decoration -->
-        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-50 to-transparent rounded-bl-full -z-10 opacity-60"></div>
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-60"></div>
 
         <!-- Title Field -->
         <div>
@@ -28,7 +28,7 @@
                 name="title"
                 value="{{ old('title', $post->title) }}"
                 placeholder="Enter an engaging title..."
-                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all text-slate-900 placeholder-slate-400 text-lg font-medium shadow-sm @error('title') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
+                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all text-slate-900 placeholder-slate-400 text-lg font-medium shadow-sm @error('title') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
                 required
             >
             @error('title')
@@ -49,7 +49,7 @@
                 name="content"
                 rows="14"
                 placeholder="Write your post content here..."
-                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all text-slate-900 placeholder-slate-400 font-mono text-sm leading-relaxed shadow-sm @error('content') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
+                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all text-slate-900 placeholder-slate-400 font-mono text-sm leading-relaxed shadow-sm @error('content') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
                 required
             >{{ old('content', $post->content) }}</textarea>
             @error('content')
@@ -68,7 +68,7 @@
             <select
                 id="status"
                 name="status"
-                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all text-slate-900 font-medium shadow-sm cursor-pointer @error('status') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
+                class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all text-slate-900 font-medium shadow-sm cursor-pointer @error('status') border-rose-500 focus:ring-rose-500/50 focus:border-rose-500 bg-rose-50/30 @enderror"
                 required
             >
                 <option value="draft" {{ old('status', $post->status) === 'draft' ? 'selected' : '' }}>Draft - Save for later</option>
@@ -105,7 +105,7 @@
         <div class="flex items-center gap-4 pt-8 border-t border-slate-100">
             <button
                 type="submit"
-                class="px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl hover:from-indigo-500 hover:to-violet-500 font-semibold transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2"
+                class="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-500 hover:to-blue-600 font-semibold transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 Update Post

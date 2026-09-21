@@ -21,7 +21,7 @@
                 value="{{ old('email') }}"
                 required
                 autofocus
-                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all @error('email') border-rose-500 @enderror"
+                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all @error('email') border-rose-500 @enderror"
                 placeholder="you@example.com"
             >
             @error('email')
@@ -36,7 +36,7 @@
                 name="password"
                 type="password"
                 required
-                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all @error('password') border-rose-500 @enderror"
+                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all @error('password') border-rose-500 @enderror"
                 placeholder="Your password"
             >
             @error('password')
@@ -45,13 +45,13 @@
         </div>
 
         <div class="flex items-center gap-2">
-            <input id="remember" name="remember" type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+            <input id="remember" name="remember" type="checkbox" class="rounded border-slate-300 text-blue-600 focus:ring-blue-500">
             <label for="remember" class="text-sm text-slate-600">Remember me</label>
         </div>
 
         <button
             type="submit"
-            class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white rounded-xl hover:from-indigo-500 hover:to-violet-500 font-semibold transition-all shadow-md hover:shadow-xl"
+            class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-500 hover:to-blue-600 font-semibold transition-all shadow-md hover:shadow-xl"
         >
             Sign In
         </button>
